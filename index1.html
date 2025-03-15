@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="lg1.png" type="image/x-icon">
+    <title>Smart Grocery List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🛒 Smart Grocery List</h1>
+        <p>Organize your shopping effortlessly</p>
+        
+        <div class="input-section">
+            <input list="grocerySuggestions" id="groceryItem" placeholder="Enter grocery item">
+            <datalist id="grocerySuggestions">
+                <optgroup label="Fruits & Vegetables">
+                    <option value="Apples"></option>
+                    <option value="Bananas"></option>
+                    <option value="Carrots"></option>
+                    <option value="Tomatoes"></option>
+                    <option value="Oranges"></option>
+                    <option value="Potatoes"></option>
+                    <option value="Onions"></option>
+                    <option value="Spinach"></option>
+                    <option value="Peppers"></option>
+                    <option value="Broccoli"></option>
+                </optgroup>
+                <optgroup label="Dairy & Eggs">
+                    <option value="Milk"></option>
+                    <option value="Eggs"></option>
+                    <option value="Cheese"></option>
+                    <option value="Yogurt"></option>
+                    <option value="Butter"></option>
+                </optgroup>
+                <optgroup label="Bakery">
+                    <option value="Bread"></option>
+                    <option value="Bagels"></option>
+                    <option value="Croissants"></option>
+                    <option value="Muffins"></option>
+                    <option value="Pita Bread"></option>
+                </optgroup>
+                <optgroup label="Meat & Seafood">
+                    <option value="Chicken"></option>
+                    <option value="Beef"></option>
+                    <option value="Pork"></option>
+                    <option value="Fish"></option>
+                    <option value="Shrimp"></option>
+                </optgroup>
+                <optgroup label="Beverages">
+                    <option value="Juice"></option>
+                    <option value="Soda"></option>
+                    <option value="Coffee"></option>
+                    <option value="Tea"></option>
+                    <option value="Water"></option>
+                </optgroup>
+                <optgroup label="Pantry Items">
+                    <option value="Rice"></option>
+                    <option value="Pasta"></option>
+                    <option value="Cereal"></option>
+                    <option value="Flour"></option>
+                    <option value="Sugar"></option>
+                </optgroup>
+            </datalist>
+            <input type="number" id="groceryQuantity" placeholder="Quantity" min="1">
+            <select id="groceryCategory">
+                <option value="Fruits & Vegetables">Fruits & Vegetables</option>
+                <option value="Dairy & Eggs">Dairy & Eggs</option>
+                <option value="Bakery">Bakery</option>
+                <option value="Meat & Seafood">Meat & Seafood</option>
+                <option value="Beverages">Beverages</option>
+                <option value="Pantry Items">Pantry Items</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="date" id="expiryDate" placeholder="Expiry Date">
+            <button onclick="addGrocery()">➕ Add Item</button>
+        </div>
+        
+        <div class="filter-section">
+            <label for="filterCategory">Filter by Category:</label>
+            <select id="filterCategory" onchange="filterGroceryList()">
+                <option value="All">All</option>
+                <option value="Fruits & Vegetables">Fruits & Vegetables</option>
+                <option value="Dairy & Eggs">Dairy & Eggs</option>
+                <option value="Bakery">Bakery</option>
+                <option value="Meat & Seafood">Meat & Seafood</option>
+                <option value="Beverages">Beverages</option>
+                <option value="Pantry Items">Pantry Items</option>
+                <option value="Other">Other</option>
+            </select>
+            <label for="sortOptions">Sort by:</label>
+            <select id="sortOptions" onchange="sortList()">
+                <option value="name">Name</option>
+                <option value="quantity">Quantity</option>
+                <option value="expiry">Expiry Date</option>
+            </select>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Category</th>
+                    <th>Expiry Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="groceryTable"></tbody>
+        </table>
+        
+        <div class="buttons">
+            <button class="clear-btn" onclick="clearList()">🗑️ Clear List</button>
+            <button class="sort-btn" onclick="sortList()">🔄 Sort Alphabetically</button>
+            <button class="save-btn" onclick="saveList()">💾 Save List</button>
+            <button class="load-btn" onclick="loadList()">📂 Load List</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

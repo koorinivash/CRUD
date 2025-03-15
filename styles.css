@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('bg.avif');
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.container {
+    max-width: 600px;
+    background:rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    color: black;
+}
+
+h1 {
+    color: #f3eded;
+    font-size: 28px;
+}
+p{
+    color:white;
+}
+label{
+    color: white;
+}
+
+.input-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+input, select, button {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+button {
+    cursor: pointer;
+    background: #15d64f;
+    color: white;
+    border: none;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 16px;
+}
+
+th {
+    background: #58df39;
+    color: white;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.clear-btn {
+    background: red;
+}
+
+.sort-btn {
+    background: #007bff;
+}
+
+.save-btn, .load-btn {
+    background: #ffc107;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
+    .input-section {
+        flex-direction: column;
+    }
+}
